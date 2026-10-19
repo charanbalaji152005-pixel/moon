@@ -63,7 +63,7 @@ export function AudioPlayer() {
   };
 
   useEffect(() => {
-    const audio = new Audio('/cornfield_chase.mp3');
+    const audio = new Audio(`${import.meta.env.BASE_URL}cornfield_chase.mp3`);
     audio.loop = true;
     audio.volume = 0.5;
     audioRef.current = audio;

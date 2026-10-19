@@ -5,4 +5,19 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   base: "/moon/",
+  build: {
+    chunkSizeWarningLimit: 1200,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/three') || id.includes('node_modules/@react-three')) {
+            return 'three-vendor';
+          }
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
+            return 'react-vendor';
+          }
+        }
+      }
+    }
+  }
 })

@@ -9,7 +9,7 @@ export function Exoplanet({ active = false, opacity = 1.0 }) {
   const starRef = useRef();
 
   // Load exoplanet texture
-  const exoplanetMap = useTexture('/exoplanet.jpg');
+  const exoplanetMap = useTexture(`${import.meta.env.BASE_URL}exoplanet.jpg`);
 
   // Atmospheric limb glow shader for exoplanet
   const atmosphereMaterial = useMemo(() => {

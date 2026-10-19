@@ -13,7 +13,10 @@ export function Moon({ scrollProgress = 0, opacity = 1.0 }) {
   const satelliteRef = useRef();
 
   // Load Moon textures with fallback
-  const [moonMap, bumpMap] = useTexture(['/moon.jpg', '/moon_bump.jpg']);
+  const [moonMap, bumpMap] = useTexture([
+    `${import.meta.env.BASE_URL}moon.jpg`,
+    `${import.meta.env.BASE_URL}moon_bump.jpg`
+  ]);
 
   // Custom Moon atmosphere/fresnel glow shader
   const atmosphereMaterial = useMemo(() => {

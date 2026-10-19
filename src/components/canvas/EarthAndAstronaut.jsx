@@ -11,9 +11,9 @@ export function EarthAndAstronaut({ active = false, opacity = 1.0 }) {
 
   // Load textures
   const [earthMap, moonMap, astroMap] = useTexture([
-    '/earth.jpg',
-    '/moon.jpg',
-    '/astronaut.png'
+    `${import.meta.env.BASE_URL}earth.jpg`,
+    `${import.meta.env.BASE_URL}moon.jpg`,
+    `${import.meta.env.BASE_URL}astronaut.png`
   ]);
 
   // Atmospheric Fresnel Glow for Earth
